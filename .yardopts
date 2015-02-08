@@ -1,0 +1,3 @@
+--private
+--protected
+'app/**/*.rb' 'lib/**/*.rake' 'lib/**/*.rb' 'test/**/*.rb'
