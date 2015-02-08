@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    annotate_models (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    yard (0.8.7.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  annotate_models!
+  yard
