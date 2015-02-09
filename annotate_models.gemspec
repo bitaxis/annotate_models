@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version     = AnnotateModels::VERSION
   spec.date        = "2015-02-08"
   spec.summary     = "Simple gem that adds several rake tasks to annotate Rails source files with model schema."
-  spec.description = "This is my own re-write of an earlier version [ctran/annoate](https://github.com/ctran/annotate_models) when
-    work on it waned.  This work started out as a Rails plugin; I am now re-bundling it as a gem since plugin support for Rails has
-    long been deprecated."
+  spec.description = "This is my own re-write of an earlier version https://github.com/ctran/annotate_models when work on it waned.
+    This work started out as an old-style Rails plugin; I am now re-bundling it as a gem-ified plugin."
   spec.authors     = ["Nathan Brazil"]
   spec.email       = 'nb@bitaxis.com'
   spec.files       = Dir[
