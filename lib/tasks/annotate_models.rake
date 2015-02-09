@@ -12,7 +12,7 @@ namespace :annotate do
   task :all => [:factories, :fixtures, :models, "test:models"]
   
   desc "Annotate factories"
-  task :factories do
+  task :factories => :environment do
     puts "Annotating factories..."
     am = AnnotateModels::ModelAnnotationGenerator.new
     am.generate
@@ -20,7 +20,7 @@ namespace :annotate do
   end
 
   desc "Annotate fixtures"
-  task :fixtures do
+  task :fixtures => :environment do
     puts "Annotating fixtures..."
     am = AnnotateModels::ModelAnnotationGenerator.new
     am.generate
@@ -28,7 +28,7 @@ namespace :annotate do
   end
 
   desc "Annotate ActiveRecord models"
-  task :models do
+  task :models => :environment do
     puts "Annotating models..."
     am = AnnotateModels::ModelAnnotationGenerator.new
     am.generate
@@ -36,7 +36,7 @@ namespace :annotate do
   end
   
   desc "Print annotations"
-  task :print do
+  task :print => :environment do
     am = AnnotateModels::ModelAnnotationGenerator.new
     am.generate
     am.print
@@ -44,7 +44,7 @@ namespace :annotate do
   
   namespace :test do
     desc "Annotate model tests"
-    task :models do
+    task :models => :environment do
       puts "Annotating model tests..."
       am = AnnotateModels::ModelAnnotationGenerator.new
       am.generate

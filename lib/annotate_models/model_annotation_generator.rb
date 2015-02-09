@@ -33,7 +33,7 @@ module AnnotateModels
           text = "#{text}\n#{annotation}"
         end
         File.open(pn.to_path, "w") { |fp| fp.write(text) }
-        puts "Annotated #{pn.to_path}."
+        puts "  Annotated #{pn.to_path}."
       end
     end
     
