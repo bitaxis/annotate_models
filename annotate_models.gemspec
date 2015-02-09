@@ -1,7 +1,11 @@
+$:.push File.expand_path("../lib", __FILE__)
+
+require "annotate_models/version"
+
 Gem::Specification.new do |spec|
 
   spec.name        = "annotate_models"
-  spec.version     = "0.0.1"
+  spec.version     = AnnotateModels::VERSION
   spec.date        = "2015-02-08"
   spec.summary     = "Simple gem that adds several rake tasks to annotate Rails source files with model schema."
   spec.description = "This is my own re-write of an earlier version [ctran/annoate](https://github.com/ctran/annotate_models) when
@@ -9,8 +13,8 @@ Gem::Specification.new do |spec|
     long been deprecated."
   spec.authors     = ["Nathan Brazil"]
   spec.email       = 'nb@bitaxis.com'
-  spec.files       = [
-    "lib/tasks/annotate_models_tasks.rake",
+  spec.files       = Dir[
+    "{app,config,db,lib}/**/*",
     "LICENSE",
     "README.md"
     ]
