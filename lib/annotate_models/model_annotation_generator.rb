@@ -82,15 +82,17 @@ module AnnotateModels
     # @param model [Class] An ActiveRecord model class.
 
     def generate_annotation(model)
+      max_column_length = model.columns.collect { |c| c.name.length }.max
       annotation = []
       annotation << "#-#{'--' * 38}-"
       annotation << "# #{model.name}"
       annotation << "#"
-      annotation << "# Name                           SQL Type             Null    Default Primary"
-      annotation << "# ------------------------------ -------------------- ------- ------- -------"
+      annotation << sprintf("# %-#{max_column_length}s SQL Type             Null    Default Primary", "Name")
+      annotation << sprintf("# %s -------------------- ------- ------- -------", "-" * max_column_length)
+      format = "# %-#{max_column_length}s %-20s %-7s %-7s %-7s"
       model.columns.each do |column|
         annotation << sprintf(
-          "# %-30s %-20s %-7s %-7s %-7s",
+          format,
           column.name,
           column.sql_type,
           column.null,
