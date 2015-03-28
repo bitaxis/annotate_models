@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
   spec.homepage    = "https://github.com/bitaxis/annotate_models.git"
   spec.license     = "MIT"
 
+  spec.add_development_dependency "yard"
+
 end
