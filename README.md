@@ -23,7 +23,7 @@ gem install annotate_models"
 Run this command from the root folder of your Rails application:
 
 ```
-rake annotate:all
+rake annotate
 ```
 
 For details, run ```rake -T```.
@@ -36,3 +36,22 @@ I first learned to love the functionality of Dave Thomas' annotate_models plugin
 as an exercise.
 
 So thanks go out to Pragmatic Dave as well as to the author and contributors of ctran/annotate_models.
+
+## Contribution
+
+Feel free to fork or clone this repository.
+
+## Workflow
+
+To build the gem, execute these commands:
+
+```
+gem build annotate_models.gemspec
+mv annotate_models-*.gem pkg/
+```
+
+To publish the gem, execute this command:
+
+```
+gem push pkg/annotate_models-<version>.gem
+```
