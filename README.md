@@ -46,5 +46,12 @@ Feel free to fork or clone this repository.
 To build the gem, execute these commands:
 
 ```
-gem build annotate_models.gemspec && * mv annotate_models-*.gem pkg/
+gem build annotate_models.gemspec
+mv annotate_models-*.gem pkg/
+```
+
+To publish the gem, execute this command:
+
+```
+gem push pkg/annotate_models-<version>.gem
 ```
