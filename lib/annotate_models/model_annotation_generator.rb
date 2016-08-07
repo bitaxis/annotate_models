@@ -60,7 +60,7 @@ module AnnotateModels
       Dir["app/models/*.rb"].each do |path|
         result = File.basename(path).scan(/^(.+)\.rb/)[0][0]
         model = eval(ActiveSupport::Inflector.camelize(result))
-        next if model.respond_to? :abstract_class && model.abstract_class
+        next if model.respond_to?(:abstract_class) && model.abstract_class
         next unless model < ActiveRecord::Base
         @annotations[model] = generate_annotation(model) unless @annotations.keys.include?(model)
       end
