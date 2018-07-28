@@ -88,17 +88,17 @@ module AnnotateModels
       annotation << "#-#{'--' * 38}-"
       annotation << "# #{model.name}"
       annotation << "#"
-      annotation << sprintf("# %-#{max_column_length}s SQL Type             Null    Default Primary", "Name")
-      annotation << sprintf("# %s -------------------- ------- ------- -------", "-" * max_column_length)
-      format = "# %-#{max_column_length}s %-20s %-7s %-7s %-7s"
+      annotation << sprintf("# %-#{max_column_length}s SQL Type             Null    Primary Default", "Name")
+      annotation << sprintf("# %s -------------------- ------- ------- ----------", "-" * max_column_length)
+      format = "# %-#{max_column_length}s %-20s %-7s %-7s %-10s"
       model.columns.each do |column|
         annotation << sprintf(
           format,
           column.name,
           column.sql_type,
           column.null,
-          (column.default || ""),
-          column.name == model.primary_key
+          column.name == model.primary_key,
+          (column.default || "")
           )
       end
       annotation << "#"

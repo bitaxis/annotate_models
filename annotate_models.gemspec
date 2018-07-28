@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
 
   spec.name        = "annotate_models"
   spec.version     = AnnotateModels::VERSION
-  spec.date        = "2015-02-08"
+  spec.date        = "2018-07-27"
   spec.summary     = "Simple gem that adds several rake tasks to annotate Rails source files with model schema."
   spec.description = "This is my own re-write of an earlier version https://github.com/ctran/annotate_models when work on it waned.
     This work started out as an old-style Rails plugin; I am now re-bundling it as a gem-ified plugin."
